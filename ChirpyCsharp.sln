@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChirpyCsharp", "ChirpyCshar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChirpyCsharp.Tests", "ChirpyCsharp.Tests\ChirpyCsharp.Tests.csproj", "{05521FA9-771C-417C-B56B-7FAEEBC62D56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChirpyCsharp.Controllers", "ChirpyCsharp.Controllers\ChirpyCsharp.Controllers.csproj", "{503221CD-24F8-4A5F-90F7-239F31643EE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{05521FA9-771C-417C-B56B-7FAEEBC62D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05521FA9-771C-417C-B56B-7FAEEBC62D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05521FA9-771C-417C-B56B-7FAEEBC62D56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{503221CD-24F8-4A5F-90F7-239F31643EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{503221CD-24F8-4A5F-90F7-239F31643EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{503221CD-24F8-4A5F-90F7-239F31643EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{503221CD-24F8-4A5F-90F7-239F31643EE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
