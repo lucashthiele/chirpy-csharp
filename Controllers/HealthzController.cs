@@ -10,7 +10,7 @@ namespace api.Controllers
     [HttpGet]
     public IActionResult HealthzHandler()
     {
-      return Ok("everything working");
+      return Ok("ok");
     }
   }
 }
