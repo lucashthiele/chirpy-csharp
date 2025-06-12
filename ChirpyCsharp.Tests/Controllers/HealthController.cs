@@ -1,5 +1,4 @@
-
-using ChirpyCsharp.Controllers;
+using ChirpyCsharp.Web.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChirpyCsharp.Tests.Controllers;

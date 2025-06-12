@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../ChirpyCsharp.Controllers/ChirpyCsharp.Controllers.csproj" />
     <ProjectReference Include="../ChirpyCsharp.Web/ChirpyCsharp.Web.csproj" />
   </ItemGroup>
 

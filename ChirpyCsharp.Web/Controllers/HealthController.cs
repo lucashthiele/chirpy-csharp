@@ -1,7 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 
-namespace ChirpyCsharp.Controllers
+namespace ChirpyCsharp.Web.Controllers
 {
   [Route("/api/[controller]")]
   [ApiController]
