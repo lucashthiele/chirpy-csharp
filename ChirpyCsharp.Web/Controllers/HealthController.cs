@@ -1,16 +1,28 @@
-
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChirpyCsharp.Web.Controllers
 {
-  [Route("/api/[controller]")]
-  [ApiController]
-  public class HealthController : Controller
-  {
-    [HttpGet]
-    public IActionResult HealthHandler()
+    [Route("/api/health")]
+    [ApiController]
+    public class HealthController : Controller
     {
-      return Ok("ok");
+        private readonly ILogger<HealthController> _logger;
+
+        public HealthController(ILogger<HealthController> logger)
+        {
+            _logger = logger;
+        }
+        
+        [HttpGet]
+        public IActionResult HealthHandler()
+        {
+            return Ok("ok");
+        }
+
+        private static string ToLog()
+        {
+            var now = DateTime.UtcNow;
+            return $"HealthController - {now.ToLongTimeString()} - {now.ToLongDateString()}";
+        }
     }
-  }
 }
