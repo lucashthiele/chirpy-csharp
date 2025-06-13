@@ -1,10 +1,12 @@
-namespace ChirpyCsharp.Web.Domain.Entities;
+namespace ChirpyCsharp.Web.Domain.Entities.User;
 
 public class User
 {
     private Guid _id;
     private string? _email;
     private string? _password;
+    private string? _accessToken;
+    private string? _refreshToken;
     private DateTime _createdAt;
     private DateTime _updatedAt;
 
@@ -26,6 +28,18 @@ public class User
         set => _password = value ?? throw new ArgumentNullException(nameof(value));
     }
 
+    public string AccessToken
+    {
+        get => _accessToken!;
+        set => _accessToken = value ?? throw new ArgumentNullException(nameof(value));
+    }
+
+    public string RefreshToken
+    {
+        get => _refreshToken!;
+        set => _refreshToken = value ?? throw new ArgumentNullException(nameof(value));
+    }
+
     public DateTime CreatedAt
     {
         get => _createdAt;
@@ -36,39 +50,5 @@ public class User
     {
         get => _updatedAt;
         set => _updatedAt = value;
-    }
-}
-
-public class UserBuilder
-{
-    private User _user;
-
-    public UserBuilder Email(string email)
-    {
-        _user.Email = email;
-        return this;
-    }
-
-    public UserBuilder Password(string password)
-    {
-        _user.Password = password;
-        return this;
-    }
-
-    public UserBuilder CreatedAt(DateTime createdAt)
-    {
-        _user.CreatedAt = createdAt;
-        return this;
-    }
-
-    public UserBuilder UpdatedAt(DateTime updatedAt)
-    {
-        _user.UpdatedAt = updatedAt;
-        return this;
-    }
-
-    public User Build()
-    {
-        return _user;
     }
 }
