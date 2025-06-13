@@ -17,6 +17,7 @@ public class UserBuilder
 
     public UserBuilder Password(string password)
     {
+        
         _user.Password = password;
         return this;
     }
