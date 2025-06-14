@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace ChirpyCsharp.Tests;
+namespace ChirpyCsharp.Tests.Helpers;
 
 public partial class BcryptValidator
 {

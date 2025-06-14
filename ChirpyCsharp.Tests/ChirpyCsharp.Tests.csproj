@@ -27,8 +27,4 @@
     <ProjectReference Include="../ChirpyCsharp.Web/ChirpyCsharp.Web.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
-
 </Project>

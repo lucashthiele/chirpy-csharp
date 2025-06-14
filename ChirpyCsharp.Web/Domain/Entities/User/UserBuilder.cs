@@ -1,8 +1,11 @@
+using ChirpyCsharp.Web.Infrastructure.Security;
+
 namespace ChirpyCsharp.Web.Domain.Entities.User;
 
 public class UserBuilder
 {
-    private User _user;
+    private readonly User _user;
+    private readonly BcryptPasswordHasher _hasher = new();
 
     public UserBuilder()
     {
@@ -17,8 +20,8 @@ public class UserBuilder
 
     public UserBuilder Password(string password)
     {
-        
-        _user.Password = password;
+        var hashedPassword = _hasher.Hash(password);
+        _user.Password = hashedPassword;
         return this;
     }
 

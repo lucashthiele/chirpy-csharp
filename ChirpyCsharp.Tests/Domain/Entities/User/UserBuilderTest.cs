@@ -1,3 +1,4 @@
+using ChirpyCsharp.Tests.Helpers;
 using ChirpyCsharp.Web.Domain.Entities.User;
 using ChirpyCsharp.Web.Infrastructure.Exceptions;
 
