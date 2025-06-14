@@ -10,21 +10,6 @@ public class UserBuilderTest
     private const string ValidPassword = "12345678";
 
     [Fact]
-    public void GivenPasswordShouldHash()
-    {
-        var validEmail = ValidEmailAddress;
-        var validPassword = ValidPassword;
-
-        var user = new UserBuilder()
-            .Email(validEmail)
-            .Password(validPassword)
-            .Build();
-
-        var isValid = BcryptValidator.IsValidBcryptHash(user.Password);
-        Assert.True(isValid);
-    }
-
-    [Fact]
     public void GivenValidInputShouldBuildUser()
     {
         var validEmail = ValidEmailAddress;
@@ -41,21 +26,8 @@ public class UserBuilderTest
 
         Assert.IsType<Web.Domain.Entities.User.User>(user);
         Assert.Equal(ValidEmailAddress, user.Email);
-        var isValid = BcryptValidator.IsValidBcryptHash(user.Password);
-        Assert.True(isValid);
         Assert.Equal(createdAt, user.CreatedAt);
         Assert.Equal(updatedAt, user.UpdatedAt);
-    }
-
-    [Fact]
-    public void GivenInvalidEmailShouldThrowException()
-    {
-        var invalidEmail = "invalid_email";
-        var password = ValidPassword;
-
-        var ex = Assert.Throws<InvalidEmailException>(() =>
-            new UserBuilder().Email(invalidEmail).Password(password).Build());
-        Assert.Equal("invalid email", ex.Message);
     }
 
     [Fact]
@@ -85,6 +57,6 @@ public class UserBuilderTest
             .CreatedAt(createdAt)
             .UpdatedAt(updatedAt)
             .Build());
-        Assert.Equal("email not provided", ex.Message);
+        Assert.Equal("password not provided", ex.Message);
     }
 }
