@@ -1,11 +1,8 @@
-using ChirpyCsharp.Web.Infrastructure.Security;
-
 namespace ChirpyCsharp.Web.Domain.Entities.User;
 
 public class UserBuilder
 {
     private readonly User _user;
-    private readonly BcryptPasswordHasher _hasher = new();
 
     public UserBuilder()
     {
@@ -55,7 +52,7 @@ public class UserBuilder
 
         if (string.IsNullOrWhiteSpace(_user.HashedPassword))
             throw new MissingFieldException("password not provided");
-        
+
         return _user;
     }
 }
