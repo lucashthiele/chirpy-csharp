@@ -19,7 +19,7 @@ public class UserBuilderTest
 
         var user = new UserBuilder()
             .Email(validEmail)
-            .Password(validPassword)
+            .HashedPassword(validPassword)
             .CreatedAt(createdAt)
             .UpdatedAt(updatedAt)
             .Build();
@@ -38,7 +38,7 @@ public class UserBuilderTest
         var updatedAt = DateTime.UtcNow;
 
         var ex = Assert.Throws<MissingFieldException>(() => new UserBuilder()
-            .Password(validPassword)
+            .HashedPassword(validPassword)
             .CreatedAt(createdAt)
             .UpdatedAt(updatedAt)
             .Build());

@@ -18,10 +18,9 @@ public class UserBuilder
         return this;
     }
 
-    public UserBuilder Password(string password)
+    public UserBuilder HashedPassword(string hashedPassword)
     {
-        var hashedPassword = _hasher.Hash(password);
-        _user.Password = hashedPassword;
+        _user.HashedPassword = hashedPassword;
         return this;
     }
 
@@ -51,6 +50,12 @@ public class UserBuilder
 
     public User Build()
     {
+        if (string.IsNullOrWhiteSpace(_user.Email))
+            throw new MissingFieldException("email not provided");
+
+        if (string.IsNullOrWhiteSpace(_user.HashedPassword))
+            throw new MissingFieldException("password not provided");
+        
         return _user;
     }
 }

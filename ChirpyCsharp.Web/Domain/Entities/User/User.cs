@@ -4,7 +4,7 @@ public class User
 {
     private Guid _id;
     private string? _email;
-    private string? _password;
+    private string? _hashedPassword;
     private string? _accessToken;
     private string? _refreshToken;
     private DateTime _createdAt;
@@ -22,10 +22,10 @@ public class User
         set => _email = value ?? throw new ArgumentNullException(nameof(value));
     }
 
-    public string Password
+    public string HashedPassword
     {
-        get => _password!;
-        set => _password = value ?? throw new ArgumentNullException(nameof(value));
+        get => _hashedPassword!;
+        set => _hashedPassword = value ?? throw new ArgumentNullException(nameof(value));
     }
 
     public string AccessToken
